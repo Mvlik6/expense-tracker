@@ -1,0 +1,174 @@
+<div class="flex my-2 font-poppins bg-[#0f0f0f] ">
+
+    <div class="flex flex-col justify-between p-3 w-full mx-2 rounded-xl lg:flex-row bg-[#0f0f0f] md:justify-start">
+        <p class="text-comm font-light lg:hidden">Welcome back</p>
+        <div class="flex flex-row lg:bg-[#151515] content-center mb-4 lg:flex-col lg:justify-start p-6 lg:rounded-lg lg:w-52">
+
+            <div class="flex flex-col lg:flex lg:flex-col self-center ml-16 md:m-0">
+
+                <img src="assets/images/icon1.png" class="object-fill mt-2 lg:mt-0 lg:rounded-full h-24 md:w-36 self-center ">
+            
+            <p class="text-3xl mt-4 ml-4 lg:ml-0 lg:font-bold lg:text-xl text-white self-center">Hello, {{displayName}}</p>
+            
+            </div>
+           
+            <div class="hidden lg:flex lg:flex-col lg:mt-12 ">
+                <p class="text-comm">Adminstration</p>
+                <div class="flex flex-row mt-8">
+                    <i class="fa-solid fa-grip-vertical text-comm pt-1 pr-4"></i>
+                    <p class="text-comm hover:text-white transition ease-in-out">Dashboard</p>
+                </div>
+                <div class="flex flex-row mt-2">
+                    <i class="fa-solid fa-user-group text-comm pt-1 pr-2"></i>
+                    <p class="text-comm hover:text-white transition ease-in-out">Friends</p>
+                </div>
+                <div class="flex flex-row mt-2">
+                    <i class="fa-solid fa-receipt text-comm pt-1 pr-4"></i>
+                    <p class="text-comm hover:text-white transition ease-in-out">Invoices</p>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex lg:flex-col lg:mt-12">
+                <p class="text-comm">Adminstration</p>
+                <div class="flex flex-row mt-8">
+                    <i class="fa-solid fa-grip-vertical text-comm pt-1 pr-4"></i>
+                    <p class="text-comm hover:text-white transition ease-in-out">Dashboard</p>
+                </div>
+                <div class="flex flex-row mt-2">
+                    <i class="fa-solid fa-user-group text-comm pt-1 pr-2"></i>
+                    <p class="text-comm hover:text-white transition ease-in-out">Friends</p>
+                </div>
+                <div class="flex flex-row mt-2">
+                    <i class="fa-solid fa-receipt text-comm pt-1 pr-4"></i>
+                    <p class="text-comm hover:text-white transition ease-in-out">Invoices</p>
+                </div>
+                <button type="button" (click)="logout()" class="mt-6 px-7 py-3 bg-white text-black font-medium text-sm leading-snug uppercase rounded-xl shadow-md hover:bg-black hover:text-white hover:shadow-lg focus:bg-comm focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Log out</button>
+            </div>
+        </div>
+        <div class="lg:flex lg:flex-col lg:w-full">
+            <div class="lg:flex lg:flex-row lg:mx-2 justify-between">
+                <div class="mb-3 xl:w-96">
+                    <div class="input-group relative flex flex-wrap items-stretch w-full mb-4 rounded">
+                      <input type="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-[#151515] rounded-xl transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+                      <span class="input-group-text flex items-center px-3 py-1.5 text-base font-normal text-comm text-center whitespace-nowrap rounded" id="basic-addon2">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                          <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex flex-row mx-2 my-2 p-2 justify-end lg:my-0">
+                    <i class="fa-solid fa-message text-comm pr-2 hover:text-white"></i>
+                    <i class="fa-regular fa-bell text-comm hover:text-white"></i>
+                  </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:justify-between md:justify-start md:space-x-4 lg:mx-2 md:content-center">
+                
+                    
+                
+                <div class="flex flex-col bg-[#151515] rounded-xl p-4 mb-4 md:w-full">
+                    <p class="text-comm font-light">Balance</p>
+                    <p class="text-white text-4xl md:text-2xl">{{ balance | currency:'SAR':'symbol-narrow'}}</p>
+                    <input class="ml-24 lg:ml-2 md:ml-0 mt-4 w-36 p-1 text-center rounded-xl bg-cards text-white md:self-center" type="number" placeholder="SAR0.00"  [(ngModel)]="income">
+        
+                    <button (click)="addBalance()" class="rounded-lg bg-cardSec mt-6 font-bold text-secondary h-8">Add income</button>
+                </div>
+
+
+                <div class="flex flex-col bg-[#151515] rounded-xl p-4 mb-4 md:w-full">
+                    <p class="text-comm font-light">Savings</p>
+                    <p class="text-white text-4xl md:text-2xl">{{savingsBalance | currency:'SAR':'symbol-narrow'}}</p>
+                    <input class="ml-24 md:ml-0 lg:ml-2 mt-4 w-36 p-1 text-center rounded-xl bg-cards text-white md:self-center" type="number" placeholder="SAR0.00" [(ngModel)]="savings" >
+        
+                    <button (click)="deductBalance()" class="rounded-lg bg-cardSec mt-6 font-bold text-secondary h-8 ">Add savings</button>
+                </div>
+                <div class="flex flex-col bg-[#151515] rounded-xl p-4 mb-4 md:w-full">
+                  <p class="text-comm font-light">Spendings</p>
+                  <p class="text-white text-4xl md:text-2xl">{{spendingsBalance | currency:'SAR':'symbol-narrow'}}</p>
+                  <div class="md:flex md:flex-row md:space-x-2">
+
+                      <input class="ml-24 lg:ml-2 md:ml-0 mt-4 w-36 p-1 text-center rounded-xl bg-cards text-white md:self-center" type="number" placeholder="SAR0.00" [(ngModel)]="spending" >
+                      <select [(ngModel)]="id" class="w-36 ml-24 md:ml-0 lg:ml-2 mt-4 border border-white rounded-xl bg-cards text-white text-center lg:self-center">
+                        
+                        <option *ngFor="let list of dropData" value="{{list.id}}" class="text-white"
+                        >{{list.id}}</option>
+                      </select>
+                  </div>
+                  <button (click)="addData()" class="rounded-lg bg-cardSec mt-6 font-bold text-secondary h-8">Add spendings</button>
+              </div>
+
+              
+            </div>
+            <div class="flex flex-col md:flex-row bg-[#151515] md:max-w-screen md:h-full mx-2 mb-2 rounded-xl md:justify-center">
+
+                <!--<div class="flex bg-[#151515] rounded-xl w-full h-full mx-2">
+    
+                    <canvas id="pieChart"></canvas>
+                    
+                </div>
+                <div class="flex bg-[#151515] rounded-xl w-full h-full mx-2 ">
+    
+                    <canvas class="object-fit" id="Chart"></canvas>
+                    
+                </div>-->
+                <div class="container md:h-full md:w-11/12" echarts [options]="echartsOptions" [extentions]="echartsExtentions"></div>
+                
+            </div>
+            <div (click)="daily = !daily; dailySpending()" class="flex flex-row p-3 m-2 rounded-xl justify-between bg-[#151515]">
+                <p class="text-white">Make a daily plan?</p>
+                <i *ngIf="!daily" class="fa-solid fa-plus text-white"></i>
+                <p *ngIf="daily" class="font-bold text-xl text-white">{{dailySpend | currency:'SAR':'symbol-narrow'}}</p>
+            </div>
+            
+            <div (click)="slider = !slider" class="flex my-2">
+                <div class="flex flex-row justify-between p-3 bg-[#151515] w-full mx-2 rounded-xl">
+                    <div class="flex flex-row space-x-2">
+                        <img src="assets/images/money.png">
+                        <p class="font-light text-3xl text-white">Spendings</p>
+                    </div>
+                    <div class="mt-2">
+                        <i *ngIf="!slider" class="fa-solid fa-arrow-down text-white"></i><i *ngIf="slider" class="fa-solid fa-arrow-up text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="container" *ngIf="slider">
+    
+                <table  class="table-fixed w-full">
+                    <tbody>
+                      <tr *ngFor="let spent of spend;" class="w-full ">
+                        <div class="flex flex-row rounded-xl p-2 my-2 mx-2 hover:bg-[#151515]">
+                            <img src="assets/images/{{spent.name}}.svg" width="50px">
+                            <div class="flex flex-col p-4 ">
+                
+                                <td class="text-comm font-light">{{spent.date}}</td>
+                                <td class="text-white text-4xl lg:text-2xl">-{{spent.cost | currency:'USD':'symbol-narrow'}}</td>
+                                <td class="text-comm font-light">{{spent.name}}</td>
+                                
+                            </div>
+                        </div>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<!--<div class="flex flex-row">
+    <div class="flex flex-col rounded-xl w-44 mx-2 p-3 border border-2 bg-cards">
+        <p class="font-light text-2xl ml-2 mb-1 text-white">Monthly Income</p>
+        <input class="ml-2 pl-2 rounded-xl border-white border-2 bg-cards text-white" type="number" placeholder="SAR0.00"  [(ngModel)]="income">
+        <button (click)="addBalance()" class="border border-xl hover:border-black rounded-xl m-2 text-white">ADD BALANCE</button>
+    </div>
+    <div class="flex flex-col rounded-xl w-44 ml-9 p-3 border border-2 bg-cards">
+        <p class="font-light text-2xl ml-2 mb-1 text-white">Monthly savings</p>
+        <input class="ml-2 pl-2 rounded-xl border-white border-2 bg-cards text-white" type="number" placeholder="SAR0.00" [(ngModel)]="savings" >
+        <button (click)="deductBalance()" class="border border-xl hover:border-black rounded-xl m-2 text-white">ADD SAVINGS</button>
+
+    </div>
+    
+</div>-->
+
+

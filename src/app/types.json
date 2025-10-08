@@ -1,0 +1,11 @@
+[
+    { "id":"House & Rent", "name": "House & Rent"},
+    { "id": "Food & Beverages", "name": "Food & Beverages"},
+    { "id": "Entertainment & Travel", "name": "Entertainment & Travel"},
+    { "id": "Bills & Depts", "name": "Bills & Depts"},
+    { "id": "Cars & Maintenance", "name": "Car & Maintenance"},
+    { "id": "Personal", "name": "Personal"},
+    { "id": "Friends & Family", "name": "Friends & Family"},
+    { "id": "Clothes", "name": "Clothes"},
+    { "id": "Shopping", "name":"Shopping"}
+  ]
